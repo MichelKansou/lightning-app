@@ -283,7 +283,10 @@ class WalletAction {
    * resetting the current seed index.
    * @return {undefined}
    */
-  initSeed() {
+  async initSeed() {
+    if (this._store.seedMnemonic.some(value => value === '')) {
+      await this.generateSeed();
+    }
     this._store.wallet.seedIndex = 0;
     this._nav.goSeedIntro ? this._nav.goSeedIntro() : this._nav.goSeed();
   }
