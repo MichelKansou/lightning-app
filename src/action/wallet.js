@@ -279,8 +279,8 @@ class WalletAction {
   }
 
   /**
-   * Initialize the seed flow by navigating to the proper next view and
-   * resetting the current seed index.
+   * Check the existing mnemonic seed and Initialize the seed flow by navigating to
+   * the proper next view and resetting the current seed index.
    * @return {undefined}
    */
   async initSeed() {
